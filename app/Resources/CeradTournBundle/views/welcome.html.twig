@@ -1,0 +1,13 @@
+{% extends '@CeradTourn/layout.html.twig' %}
+{% block content %}
+<h3>Welcome</h3>
+<p>
+    Welcome to the AYSO Area 5B Games 2013 Referee Scheduling Site. 
+    This year we will be using the same zayso system that we used for the past few S5Games events as well as the National Games 2012 event.
+    Returning referees from those events will already have a account.
+    New referees will need to create a Zayso account.
+</p>
+<h3>Zayso Signin</h3>
+<p>If you already have a Zayso account then sign in by clicking one of the icons below or filling out the sign in form.</p>
+{{ include('@CeradTourn/login_form.html.twig') }}
+{% endblock %}
