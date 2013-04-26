@@ -1,4 +1,5 @@
 {% extends '@CeradTourn/layout.html.twig' %}
+{% block janrain %}{% include '@CeradJanrain/Janrain/janrain.js.twig' %}{% endblock %}
 {% block content %}
 <h3>Welcome</h3>
 <p>
@@ -9,5 +10,6 @@
 </p>
 <h3>Zayso Signin</h3>
 <p>If you already have a Zayso account then sign in by clicking one of the icons below or filling out the sign in form.</p>
+<div id="janrainEngageEmbed"></div>
 {{ include('@CeradTourn/login_form.html.twig') }}
 {% endblock %}
