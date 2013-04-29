@@ -12,7 +12,7 @@
     <p style="margin-top: 2px; color: black; ">
       <span style="color: blue;">Zayso User: </span>
       <span style="color: greenx;">       
-        {% if     is_granted('ROLE_USER') %}{{ app.user.name }}{% endif %}
+        {% if     is_granted('ROLE_USER') %}{{ app.user.name }} {{ app.user.person.phone }}{% endif %}
         {% if not is_granted('ROLE_USER') %}Guest{% endif %}          
       </span>
     </p>

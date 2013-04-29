@@ -19,5 +19,5 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
     
-    cerad_account_master_password:
-    cerad_janrain_rpx_api_key:     
+    cerad_account_master_password: something
+    cerad_janrain_rpx_api_key:     something
