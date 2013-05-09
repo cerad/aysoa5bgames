@@ -1,0 +1,66 @@
+<div class="schedule-games-list">
+    <table id="schedule" border="1" style="max-widthx: 850px;">
+    <thead>
+        <tr><th colspan="20">Game Schedule - Count: {{ games | length }}</th></tr>
+        <tr>
+            <th>Game</th>
+            <th>DOW</th>
+            <th>Time</th>
+            <th>Field</th>
+            <th>Level</th>
+            <th>Type</th>
+            <th>Home / Away Teams</th>
+            <th>Officials</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for game in games %}
+        <tr id="ref-sched-{{game.num}}" class="game-status-{{game.status}}">
+            <td>
+                {% if 0 %}
+                <a href="{{ path('cerad_tourn_schedule_game_edit', { 'id': game.id })}}">{{ game.getNum() }}</a>
+                {% else %}
+                {{ game.num }}
+                {% endif %}
+            </td>
+            <td>{{ game.dtBeg.format('D'    ) }}</td>
+            <td style="text-align: right;">{{ game.dtBeg.format('g:i A') }}</td>    
+            <td>{{ game.field.name      }}</td>
+            <td>{{ game.pool            }}
+            <td>{{ game.level.name      }}
+            </td>
+           <td><table>
+                {% for gameTeam in game.teams %}
+                    <tr><td>{{ gameTeam.score }}</td><td>{{ gameTeam.name }}</td></tr>
+                {% endfor %}
+            </table></td>
+            <td><table class="game-officials-list">
+                {% for gamePerson in game.persons  %}
+                <tr>
+                    <td>{{ gamePerson.role }}:</td>
+                    <td class="game-person-status-{{ gamePerson.status }}">{{ gamePerson.name }} </td>
+                </tr>
+                {% endfor %}
+            </table></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+{# block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function() 
+    {
+        $('#schedule').dataTable(
+        {
+            "bPaginate": false,
+            "bLengthChange": false,
+            "bFilter": false,
+            "bSort": true,
+            "bInfo": false,
+            "bAutoWidth": false,
+            "aaSorting": [[ 2, "asc" ],[ 5, "asc" ],[ 4, "asc" ]]
+        });
+    });
+</script>
+{% endblock #}
