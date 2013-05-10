@@ -1,0 +1,144 @@
+{# form_theme '@CeradTournBundle/fields.html.twig' #}
+{% extends '@CeradTourn/layout.html.twig' %}
+
+{% block content %}
+<div>
+<form action="{{ path('cerad_tourn_account_create') }}" method="post" {{ form_enctype(form) }}>
+<table border="1" style="width: 800px;">
+<tr><th colspan="3">Create New Zayso Account</th></tr>
+{#
+<tr>
+    <td style="width: 250px;">{{ form_label (form.openidProvider) }}</td>
+    <td style="width: 200px;">{{ form_widget(form.openidProvider) }}</td>
+    <td style="width: 200px;">Read Only<br />{{ form_errors(form.openidProvider) }}</td>
+</tr>
+<tr>
+    <td>{{ form_label (form.openidDisplayName) }}</td>
+    <td>{{ form_widget(form.openidDisplayName) }}</td>
+    <td>Read Only<br />{{ form_errors(form.openidDisplayName) }}</td>
+</tr>
+<tr>
+    <td>{{ form_label (form.openidUserName) }}</td>
+    <td>{{ form_widget(form.openidUserName) }}</td>
+    <td>Read Only<br />{{ form_errors(form.openidUserName) }}</td>
+</tr>
+#}
+<tr><td colspan="3"></td></tr>
+<tr>
+    <td>{{ form_label (form.userName) }}</td>
+    <td>{{ form_widget(form.userName) }}</td>
+    <td>
+        For signing in.<br />
+        {{ form_errors(form.userName) }}
+    </td>
+</tr>
+<tr>
+    <td>{{ form_label (form.userPass.pass1) }}</td>
+    <td>{{ form_widget(form.userPass.pass1) }}</td>
+    <td>
+        &nbsp;
+        {{ form_errors(form.userPass.pass1) }}
+    </td>
+</tr>
+<tr>
+    <td>{{ form_label (form.userPass.pass2) }}</td>
+    <td>{{ form_widget(form.userPass.pass2) }}</td>
+    <td>
+        &nbsp;
+        {{ form_errors(form.userPass.pass2) }}
+    </td>
+</tr>
+<tr><td colspan="3"></td></tr>
+<tr>
+    <td> {{ form_label (form.aysoid) }}</td>
+    <td> {{ form_widget(form.aysoid) }}</td>
+    <td>
+        Required.<br />
+        8 digit AYSO volunteer number. <br />
+        Available from www.eayso.org<br />
+        {{ form_errors(form.aysoid) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.region) }}</td>
+    <td> {{ form_widget(form.region) }}</td>
+    <td>
+        Required.<br />
+        {{ form_errors(form.region) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.badge) }}</td>
+    <td> {{ form_widget(form.badge) }}</td>
+    <td>
+        Will be verified from eAYSO.<br />
+        {{ form_errors(form.badge) }}
+    </td>
+</tr>
+<tr><td colspan="3"></td></tr>
+<tr>
+    <td> {{ form_label (form.firstName) }}</td>
+    <td> {{ form_widget(form.firstName) }}</td>
+    <td>
+        Legal name, should match eAYSO.<br />
+        {{ form_errors(form.firstName) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.lastName) }}</td>
+    <td> {{ form_widget(form.lastName) }}</td>
+    <td>
+        Legal name, should match eAYSO.<br />
+        {{ form_errors(form.lastName) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.nickName) }}</td>
+    <td> {{ form_widget(form.nickName) }}</td>
+    <td>
+        Used in place of first name for assignments.<br />
+        {{ form_errors(form.nickName) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.email) }}</td>
+    <td> {{ form_widget(form.email) }}</td>
+    <td>
+        Required.<br />
+        Should match your eAYSO email.<br />
+        {{ form_errors(form.email) }}
+    </td>
+</tr>
+<tr>
+    <td> {{ form_label (form.phone) }}</td>
+    <td> {{ form_widget(form.phone) }}</td>
+    <td>
+        Highly recommended.<br />
+        {{ form_errors(form.phone) }}
+    </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td align="center"><input type="submit" name="accountCreateSubmit" value="Create Account" />
+</tr>
+<tr><td colspan="3">{{ form_errors(form) }}</td></tr>
+</table>
+{{ form_rest(form) }}
+</form>
+<br />
+</div>
+<div>
+    <h3>Instructions</h3>
+    <p>
+        You must have your 8-difit AYSOID volunteer number to create an account.
+        You should be able to look it up on www.eayso.org or ask your regional commissioner.
+        Your Regional Referee Administrator can confirm your referee certification
+        and volunteer form status in eAYSO.
+    </p><p>
+        In general you should only need one account per family.
+        Additional referees can be added to your account once it is created.
+        The will allow the account holder to sign up the other referees for games without having to switch accounts.
+    </p>
+</div>
+{% endblock %}
