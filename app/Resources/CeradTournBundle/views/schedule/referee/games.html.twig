@@ -7,8 +7,8 @@
             <th>DOW</th>
             <th>Time</th>
             <th>Field</th>
-            <th>Level</th>
             <th>Type</th>
+            <th>Division</th>
             <th>Home / Away Teams</th>
             <th>Officials</th>
         </tr>
@@ -16,28 +16,28 @@
     <tbody>
         {% for game in games %}
         <tr id="ref-sched-{{game.num}}" class="game-status-{{game.status}}">
-            <td>
+            <td class="schedule-games-list-game">
                 {% if 0 %}
                 <a href="{{ path('cerad_tourn_schedule_game_edit', { 'id': game.id })}}">{{ game.getNum() }}</a>
                 {% else %}
                 {{ game.num }}
                 {% endif %}
             </td>
-            <td>{{ game.dtBeg.format('D'    ) }}</td>
-            <td style="text-align: right;">{{ game.dtBeg.format('g:i A') }}</td>    
-            <td>{{ game.field.name      }}</td>
-            <td>{{ game.pool            }}
-            <td>{{ game.level.name      }}
+            <td class="schedule-games-list-dow"  >{{ game.dtBeg.format('D'    ) }}</td>
+            <td class="schedule-games-list-time" >{{ game.dtBeg.format('g:i A') }}</td>    
+            <td class="schedule-games-list-field">{{ game.field.name      }}</td>
+            <td class="schedule-games-list-pool" >{{ game.pool            }}
+            <td class="schedule-games-list-div"  >{{ game.level.name      }}
             </td>
-           <td><table>
+           <td class="schedule-games-list-teams"><table>
                 {% for gameTeam in game.teams %}
                     <tr><td>{{ gameTeam.score }}</td><td>{{ gameTeam.name }}</td></tr>
                 {% endfor %}
             </table></td>
-            <td><table class="game-officials-list">
+            <td class="schedule-games-list-officials"><table class="game-officials-list">
                 {% for gamePerson in game.persons  %}
                 <tr>
-                    <td>{{ gamePerson.role }}:</td>
+                    <td><a href="{{ path('cerad_tourn_schedule_referee_assign', { 'id': game.id }) }}">{{ gamePerson.role }}:</a></td>
                     <td class="game-person-status-{{ gamePerson.status }}">{{ gamePerson.name }} </td>
                 </tr>
                 {% endfor %}

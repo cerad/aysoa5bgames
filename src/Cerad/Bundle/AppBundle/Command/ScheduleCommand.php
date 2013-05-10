@@ -29,7 +29,7 @@ class ScheduleCommand extends ContainerAwareCommand
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $file = 'Schedule20130508.xls';
+        $file = 'Schedule20130509.xls';
         $datax = $this->getParameter('datax');
         
         $params = array
@@ -43,7 +43,7 @@ class ScheduleCommand extends ContainerAwareCommand
             
             'defaultGameStatus' => 'Normal',
             'inputFileName'     => $datax . $file,
-            'worksheetName'     => 'Schedule',
+          //'worksheetName'     => 'Schedule',
         );
         $import = $this->getService('cerad_tourn.schedule.import');
         
