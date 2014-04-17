@@ -1,0 +1,8 @@
+parameters:
+
+    cerad_fed_role_default: AYSOV
+    
+    cerad_project_project_default: AYSO_A5BGames_Spring2014
+    
+    cerad_project_project_files:
+        - "%kernel.root_dir%/config/projects/AYSO_A5BGames_Spring2014.yml"

@@ -1,0 +1,59 @@
+     
+key:        AYSO_A5BGames_Spring2014
+arbiter:    ~ # AYSO_SOCCER_A5BGAMES_SPRING2014
+slug:       A5BGamesSpring2014
+slugPrefix: A5BGames
+role:       Tournament
+    
+fed:     AYSO
+fedOrg:  USSF_AL # ???
+fedRole: AUSOV
+                
+name:    Area 5B Games 2014
+desc:    AYSO Area 5B Games 2014 - Knoxville, TN - April 25,26,27
+    
+general_url:  'http://aysoarea5b.com/interregional-games/area-games/'
+register_url: 'http://zayso.org/a5bgames'
+    
+status:    Active
+verified:  Yes
+                
+season:    Spring2014
+sport:     Soccer
+domain:    AYSO
+domainSub: A5BGames
+                                
+assignor:
+  name:   Art Hundiak
+  email:  ahundiak@gmail.com
+  phone:  256.457.5943
+  submit: Emails your application to Art Hundiak and yourself.
+  prefix: A5BGames
+  bcc:    { name: Art Hundiak, email: ahundiak@gmail.com }
+  
+dates:
+  - { date: '2014-04-25', label: Fri, lodging: false, search: true, avail: 5PM Kickoff }
+  - { date: '2014-04-26', label: Sat, lodging: false, search: true, avail: AllDay }
+  - { date: '2014-04-27', label: Sun, lodging: false, search: true, avail: AllDay }
+  
+planNeeded: false
+
+plan:
+  refereeLevel:       ~                                   
+  comfortLevelCenter: ~             
+  comfortLevelAssist: ~
+                        
+  requestAssessment: ~
+
+  lodging: ~
+  lodgingWith:   ~
+    
+  travelingWith: ~
+  travelingFrom: ~
+                    
+  teamClubAffilation: ~            
+  teamClubName: ~
+                             
+  availability: ~
+                            
+  notes: ~

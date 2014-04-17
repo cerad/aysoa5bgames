@@ -20,14 +20,6 @@ doctrine:
                 user:     %database_user%
                 password: %database_password%
                 charset:  UTF8
-            accounts:
-                driver:   %database_driver%
-                host:     %database_host%
-                port:     %database_port%
-                dbname:   %database_name_accounts%
-                user:     %database_user%
-                password: %database_password%
-                charset:  UTF8
             persons:
                 driver:   %database_driver%
                 host:     %database_host%
@@ -36,11 +28,11 @@ doctrine:
                 user:     %database_user%
                 password: %database_password%
                 charset:  UTF8
-            legacy2012:
+            project:
                 driver:   %database_driver%
                 host:     %database_host%
                 port:     %database_port%
-                dbname:   %database_name_legacy2012%
+                dbname:   %database_name_projects%
                 user:     %database_user%
                 password: %database_password%
                 charset:  UTF8
@@ -55,7 +47,16 @@ doctrine:
             default:
                 connection: default
                 mappings:
-
+                    CeradUserBundle:   ~
+                    CeradGameBundle:   ~
+                    CeradPersonBundle: ~
+                    CeradProjectBundle: { prefix: Cerad\Bundle\ProjectBundle\Doctrine\Entity }
+                    
+            project:
+                connection: project
+                mappings:
+                    CeradProjectBundle: { prefix: Cerad\Bundle\ProjectBundle\Doctrine\Entity }
+            
             games:
                connection: games
                mappings:
@@ -66,19 +67,8 @@ doctrine:
                         time:  Cerad\Bundle\GameBundle\Doctrine\DQL\Time
                         month: Cerad\Bundle\GameBundle\Doctrine\DQL\Month
                         
-            accounts:
-               connection: accounts
-               mappings:
-                    FOSUserBundle: ~
-                    CeradAccountBundle: ~
-                    
             persons:
                connection: persons
                mappings:
                     CeradPersonBundle: ~
                     
-            legacy2012:
-               connection: legacy2012
-               mappings:
-                    CeradLegacy2012Bundle: ~
-                       
