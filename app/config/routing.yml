@@ -1,7 +1,7 @@
 # ==================================================
 # Tournament Routes
-#cerad_tourn:
-#  resource: "@CeradTournBundle/Resources/config/routing.yml"
+cerad_tourn:
+  resource: "@CeradTournBundle/Resources/config/routing.yml"
 
     
 # ==================================================
