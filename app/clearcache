@@ -1,4 +1,4 @@
 #!/bin/bash
 php console cache:clear --env=prod --no-debug
-php console assets:install ../../zayso/web/a5bgames
-php console assetic:dump   ../../zayso/web/a5bgames
+php console assets:install ~/public_html/a5bgames
+php console assetic:dump   ~/public_html/a5bgames
