@@ -4,13 +4,20 @@
 <link rel="stylesheet" href="{{ asset('bundles/ceradapp/css/reset.css') }}" media="all" />
 <link rel="stylesheet" href="{{ asset('bundles/ceradapp/css/basic.css') }}" media="all" />
 <link rel="stylesheet" href="{{ asset('bundles/ceradapp/css/forms.css') }}" media="all" />
+<link rel="stylesheet" href="{{ asset('bundles/ceradapp/css/games.css') }}" media="all" />
 {% endblock %}
 
 {% block layout_body %}
 <div id="layout-body">
 <div id="layout-header">
 {% if project is defined %}
-{{ project.desc }}
+{{ project.desc }}<br />
+{% if is_granted('ROLE_USER') %}
+User: {{ app.user.accountName }}  <a href="{{ path('cerad_user__user__logout') }}">Logout</a><br />
+<a href="{{ path('cerad_tourn__home') }}">Home</a>  <a href="{{ path('cerad_tourn__referee_schedule__show') }}">Referee Schedule</a> 
+{% else %}
+User: Guest <a href="{{ path('cerad_user__user__login') }}">Login</a>
+{% endif %}
 {% endif %}
 </div>
 {% block layout_userinfo %}

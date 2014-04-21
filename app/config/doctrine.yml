@@ -51,6 +51,11 @@ doctrine:
                     CeradGameBundle:   ~
                     CeradPersonBundle: ~
                     CeradProjectBundle: { prefix: Cerad\Bundle\ProjectBundle\Doctrine\Entity }
+                dql:
+                    datetime_functions:
+                        date:  Cerad\Bundle\CoreBundle\Doctrine\DQL\Date
+                        time:  Cerad\Bundle\CoreBundle\Doctrine\DQL\Time
+                        month: Cerad\Bundle\CoreBundle\Doctrine\DQL\Month
                     
             project:
                 connection: project
