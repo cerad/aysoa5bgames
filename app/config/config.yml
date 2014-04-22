@@ -29,8 +29,10 @@ twig:
     globals:
         html_page_title: A5bGames
     paths:
+        "%kernel.root_dir%/../src/Cerad/Bundle/AppBundle/Resources/views/CeradGame":   CeradGame
         "%kernel.root_dir%/../src/Cerad/Bundle/AppBundle/Resources/views/CeradUser":   CeradUser
         "%kernel.root_dir%/../src/Cerad/Bundle/AppBundle/Resources/views/CeradTourn":  CeradTourn
+        "%kernel.root_dir%/../../Cerad/Bundle/GameBundle/Action" : CeradGame
         "%kernel.root_dir%/../../Cerad/Bundle/TournBundle/Action": CeradTourn
 
 # Assetic Configuration

@@ -14,9 +14,12 @@
 {{ project.desc }}<br />
 {% if is_granted('ROLE_USER') %}
 User: {{ app.user.accountName }}  <a href="{{ path('cerad_user__user__logout') }}">Logout</a><br />
-<a href="{{ path('cerad_tourn__home') }}">Home</a>  <a href="{{ path('cerad_tourn__referee_schedule__show') }}">Referee Schedule</a> 
+<a href="{{ path('cerad_tourn__home') }}">Home</a>
+<a href="{{ path('cerad_tourn__referee_schedule__show') }}">Referee Schedule</a> 
 {% else %}
-User: Guest <a href="{{ path('cerad_user__user__login') }}">Login</a>
+User: Guest <a href="{{ path('cerad_user__user__login') }}">Login</a><br />
+<a href="{{ path('cerad_tourn__welcome') }}">Welcome</a>
+<a href="{{ path('cerad_tourn__referee_schedule__show') }}">Referee Schedule</a>
 {% endif %}
 {% endif %}
 </div>

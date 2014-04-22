@@ -2,6 +2,9 @@
 cerad_tourn_routes:
   resource: "@CeradTournBundle/Resources/config/routing.yml"
   
+cerad_game_routes:
+  resource: "@CeradGameBundle/Resources/config/routing.yml"
+  
 cerad_user_routes:
   resource: "@CeradUserBundle/Resources/config/routing.yml"
   
